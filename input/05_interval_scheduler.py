@@ -37,9 +37,12 @@ def transform(data: dict) -> pd.DataFrame:
 def load(data: pd.DataFrame, path: str) -> None:
     data.to_csv(path_or_buf= path, index= False)
   
-  
+scheduler = IntervalSchedule(
+    interval=timedelta(seconds=10)
+)
+
 def prefect_flow():
-   with Flow(name='simple_etl_pipeline') as flow:
+   with Flow(name='simple_etl_pipeline', schedule = scheduler) as flow:
       # here, we go! Calling the parameter function to fetch the value with name 'p_url'
       param_url = Parameter(name = 'p_url', required = True)
       # calling the above defined functions to extract and transform data
