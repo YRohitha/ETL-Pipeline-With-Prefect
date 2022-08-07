@@ -1,7 +1,6 @@
-# ETL Pipeline with Prefect
+## ETL Pipeline with Prefect
 
-Description: Building ETL Pipeline using Workflow Management system.
-Author: @Rohitha Yarlagadda
+### Description: Building ETL Pipeline using Workflow Management system.
 
 Perform the below with Prefect:
 - Declare tasks
